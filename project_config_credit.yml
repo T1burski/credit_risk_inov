@@ -1,0 +1,65 @@
+prd:
+  catalog_name: mlops_prd
+  schema_name: dbk_credit_risk
+acc:
+  catalog_name: mlops_acc
+  schema_name: dbk_credit_risk
+dev:
+  catalog_name: mlops_dev
+  schema_name: dbk_credit_risk
+
+
+experiment_name_basic: /Shared/credit-risk-basic
+experiment_name_custom: /Shared/credit-risk-custom
+
+
+original_features:
+  - term
+  - earliest_cr_line
+  - issue_d
+  - funded_amnt
+  - loan_status
+  - int_rate
+  - sub_grade
+  - annual_inc
+  - inq_last_6mths
+  - total_rev_hi_lim
+  - purpose
+  - dti
+  - home_ownership
+  - initial_list_status
+  - verification_status
+  - addr_state
+
+final_features:
+  - int_rate
+  - sub_grade
+  - annual_inc
+  - inq_last_6mths
+  - total_rev_hi_lim
+  - purpose
+  - dti
+  - home_ownership
+  - initial_list_status
+  - verification_status
+  - mths_since_earliest_cr_line
+  - addr_state
+
+reference_categories:
+  addr_state: "['AL', 'HI', 'FL', 'NV', 'IA', 'NE']"
+  annual_inc: "(-inf, 28338.00)"
+  dti: "[29.01, inf)"
+  grade: "['E', 'F', 'G']"
+  home_ownership: "['RENT', 'NONE', 'OTHER']"
+  initial_list_status: "['f']"
+  inq_last_6mths: "[2.50, inf)"
+  int_rate: "[20.99, inf)"
+  mths_since_earliest_cr_line: "(-inf, 145.50)"
+  purpose: "['medical', 'house', 'other', 'moving', 'renewable_energy', 'educational', 'small_business']"
+  sub_grade: "['E2', 'E3', 'E4', 'F1', 'E5', 'F2', 'G4', 'F3', 'F4', 'G2', 'G5', 'G3', 'F5', 'G1']"
+  term_int: "[48.00, inf)"
+  total_rev_hi_lim: "(-inf, 5940.50)"
+  verification_status: "['Verified']"
+
+
+target: default_bin
